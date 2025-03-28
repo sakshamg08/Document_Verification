@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Document Verification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Blockchain Document Verification</h1>
+    
+    <div class="container">
+        <h2>Connect MetaMask</h2>
+        <p class="text-center">Connect your MetaMask wallet to register and verify documents on the blockchain.</p>
+        <button id="connectWallet" class="btn">Connect Wallet</button>
+        <div id="walletStatus"></div>
+    </div>
+
+    <div class="container" id="registerContainer">
+        <h2>Register Document</h2>
+        <p class="text-center">Upload a document to register it on the blockchain.</p>
+        
+        <form id="uploadForm">
+            <div class="form-group">
+                <label for="uploadFile">Select document to register:</label>
+                <input type="file" id="uploadFile" required>
+            </div>
+            <button type="submit" class="btn" id="uploadBtn">Upload and Register</button>
+            <span id="uploadLoader" class="loader hidden"></span>
+        </form>
+        
+        <div id="uploadStatus" class="status"></div>
+    </div>
+
+    <div class="container">
+        <h2>Verify Document</h2>
+        <p class="text-center">Check if a document has been registered on the blockchain.</p>
+        
+        <form id="verifyForm">
+            <div class="form-group">
+                <label for="verifyFile">Select document to verify:</label>
+                <input type="file" id="verifyFile" required>
+            </div>
+            <button type="submit" class="btn" id="verifyBtn">Verify Document</button>
+            <span id="verifyLoader" class="loader hidden"></span>
+        </form>
+        
+        <div id="verifyStatus" class="status"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
